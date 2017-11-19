@@ -1,0 +1,31 @@
+---
+- hosts: tvpi
+  become: true
+
+  tasks:
+    # Required for check mode - https://github.com/ansible/ansible/issues/6910
+    - name: Install python-apt is installed
+      command: >
+        apt-get install python-apt -y -q
+        creates=/usr/share/doc/python-apt
+
+    - name: Install packages
+      apt: name={{ item }} state=present
+      with_items:
+        - realvnc-vnc-server
+        - vim
+        - ssh
+        - ntp
+
+    - name: Start services
+      service: name={{ item }} state=started enabled=yes
+      with_items:
+        - ssh
+        - vncserver-virtuald
+        - ntp
+
+    # https://github.com/KenT2/tboplayer
+    - name: Install tboplayer to control omxplayer
+      shell:  >
+        cd ~ && wget https://github.com/KenT2/tboplayer/tarball/master -O - | tar xz && cd KenT2-tboplayer-* && chmod +x setup.sh && ./setup.sh
+        creates=/opt/tboplayer/tboplayer.py
