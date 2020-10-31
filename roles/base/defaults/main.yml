@@ -1,7 +1,6 @@
 ---
 # defaults file for base
 packages:
-  - realvnc-vnc-server
   - vim
   - ssh
   - ntp

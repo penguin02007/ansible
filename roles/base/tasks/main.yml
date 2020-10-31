@@ -1,8 +1,14 @@
 ---
 # tasks file for base
-    - name: Install base packages
-      apt:
-        update_cache: yes
-        name: "{{ item }}"
+- name: Install base packages
+  apt:
+    update_cache: yes
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"
+
+- name: Download RealVNC Server
+  block:
+    - apt:
+        name: https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.7.2-Linux-x64.deb
         state: present
-      loop: "{{ packages }}"
