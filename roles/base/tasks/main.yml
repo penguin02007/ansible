@@ -15,3 +15,6 @@
         name: vncserver-x11-serviced.service
         state: started
         enabled: yes
+    - templates:
+        src: gdm3/custom.conf.j2
+        dest: /etc/gdm3/custom.conf
