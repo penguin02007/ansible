@@ -20,7 +20,8 @@
         src: gdm3/custom.conf.j2
         dest: /etc/gdm3/custom.conf
     - command: gsettings set org.gnome.desktop.screensaver lock-enabled false
-        creates: /etc/org.gnome.desktop.screensaver
+        args:
+          creates: /etc/org.gnome.desktop.screensaver
 
 
 - name: Create .bash_aliases
