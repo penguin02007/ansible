@@ -2,6 +2,7 @@
 # tasks file for base
     - name: Install base packages
       apt:
+        update_cache: yes
         name: "{{ item }}"
         state: present
       loop: "{{ packages }}"
