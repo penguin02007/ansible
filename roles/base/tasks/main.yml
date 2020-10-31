@@ -26,7 +26,7 @@
 
 - name: Create .bash_aliases
   copy:
-    src: .bashrc
+    src: .bash_aliases
     dest: /etc/skel/.bash_aliases
     owner: root
     group: root
