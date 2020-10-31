@@ -19,3 +19,12 @@
     - template:
         src: gdm3/custom.conf.j2
         dest: /etc/gdm3/custom.conf
+
+- name: Create .bash_aliases
+  copy:
+    src: .bashrc
+    dest: /etc/skel/.bash_aliases
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
