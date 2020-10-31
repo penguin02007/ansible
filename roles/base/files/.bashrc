@@ -1,0 +1,1 @@
+alias xrandr_1280='xrandr -s 1280x768'
