@@ -2,10 +2,6 @@
 # tasks file for base
     - name: Install base packages
       apt:
-        name: {{ item }}
+        name: "{{ item }}"
         state: present
-      loop:
-        - realvnc-vnc-server
-        - vim
-        - ssh
-        - ntp
+      loop: "{{ packages }}"
