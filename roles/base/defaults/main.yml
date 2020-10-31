@@ -6,4 +6,5 @@ packages:
   - ntp
 gdm:
   wayland_enable: 'false'
-  automatic_login_enable: 'false'
+  automatic_login_enable: 'true'
+  automatic_login: kachan
