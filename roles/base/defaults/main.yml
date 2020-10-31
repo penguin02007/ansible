@@ -5,6 +5,6 @@ packages:
   - ssh
   - ntp
 gdm:
-  wayland_enable: false
+  wayland_enable: 'false'
   automatic_login: kachan
-  automatic_login_enable: true
+  automatic_login_enable: 'true'
