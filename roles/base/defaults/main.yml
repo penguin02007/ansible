@@ -4,3 +4,7 @@ packages:
   - vim
   - ssh
   - ntp
+gdm:
+  wayland_enable: false
+  automatic_login: kachan
+  automatic_login_enable: true
