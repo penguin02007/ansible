@@ -4,6 +4,8 @@ packages:
   - vim
   - ssh
   - ntp
+  - openconnect
+  - tcpdump
 gdm:
   wayland_enable: 'false'
   automatic_login_enable: 'false'
